@@ -3,7 +3,7 @@
 「ENISHI — オリジナル婚姻届作成」のプライバシーポリシー、利用規約、サポート案内を公開する静的サイトです。
 
 - 運営：Cychow
-- お問い合わせ：shira991207@gmail.com
+- お問い合わせ：cychow.app@gmail.com
 - ホーム：https://eiji127.github.io/marriage-form-creator-support/
 - プライバシー：https://eiji127.github.io/marriage-form-creator-support/privacy/
 - 利用規約：https://eiji127.github.io/marriage-form-creator-support/terms/
