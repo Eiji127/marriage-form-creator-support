@@ -1,67 +1,8 @@
-/* Support page in the bridal style of the 2026-11 App Store artwork: soft pink, rose, petals.
-   Fonts are self-hosted subsets (SIL OFL, see fonts/OFL-*.txt); no external requests. */
-@font-face{font-family:"ENISHI Serif";src:url("fonts/cormorant-garamond-subset.woff2") format("woff2");font-display:swap}
-@font-face{font-family:"ENISHI Maru";src:url("fonts/zen-maru-gothic-subset.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"ENISHI Maru";src:url("fonts/zen-maru-gothic-bold-subset.woff2") format("woff2");font-weight:700;font-display:swap}
-
-:root{
-  color-scheme:light;
-  --pink:#fdf1f4;--pink-2:#f7dde3;--rose:#b04866;--rose-deep:#8c2f4b;--crimson:#d9557b;
-  --ink:#4a3338;--muted:#7d6268;--card:#fffdfd;--line:#f1d3dc;--radius:28px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:24px}
-body{
-  margin:0;color:var(--ink);font-size:16px;line-height:2;-webkit-font-smoothing:antialiased;
-  font-family:"ENISHI Maru","Hiragino Maru Gothic ProN","Zen Maru Gothic","Hiragino Sans",sans-serif;
-  background:
-    radial-gradient(ellipse 40% 26% at 8% 18%,#ffffffcc,transparent 70%),
-    radial-gradient(ellipse 34% 22% at 92% 6%,#ffffffb3,transparent 70%),
-    linear-gradient(#fdf3f5,#f8e3e9 60%,#f6dce4);
-  background-attachment:fixed;min-height:100vh;
-}
-/* Petals, drawn in CSS so the page needs no images. */
-body::before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
-  background:
-    radial-gradient(ellipse 14px 22px at 6% 30%,#efa9bc99 60%,transparent 62%),
-    radial-gradient(ellipse 9px 15px at 12% 62%,#f4c3d080 60%,transparent 62%),
-    radial-gradient(ellipse 18px 26px at 94% 24%,#e996ad80 60%,transparent 62%),
-    radial-gradient(ellipse 10px 16px at 88% 70%,#f2b8c890 60%,transparent 62%),
-    radial-gradient(ellipse 12px 19px at 97% 88%,#efa9bc70 60%,transparent 62%),
-    radial-gradient(ellipse 8px 13px at 3% 90%,#f4c3d080 60%,transparent 62%);
-}
-a{color:var(--rose);text-underline-offset:.25em;overflow-wrap:anywhere}
-a:hover{color:var(--rose-deep)}
-a:focus-visible{outline:3px solid var(--rose);outline-offset:4px;border-radius:8px}
-p{margin:12px 0}
-h1,h2{margin:0;font-weight:700;letter-spacing:.04em}
-
-.skip{position:absolute;left:16px;top:-100px;background:var(--card);padding:12px 18px;z-index:10;border-radius:12px}
-.skip:focus{top:12px}
-
-/* Header: the ENISHI wordmark over a small rule, as on the App Store artwork. */
-.site-header{background:#ffffff99;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.header-inner{max-width:1080px;margin:auto;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.brand{display:inline-flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--rose)}
-.wordmark,.footer-brand{font-family:"ENISHI Serif","Cormorant Garamond",Georgia,serif;letter-spacing:.32em;margin-right:-.32em;line-height:1}
-.wordmark{font-size:34px}
-.brand-rule{position:relative;width:132px;height:9px;margin:7px 0 5px;
-  background:linear-gradient(var(--rose),var(--rose)) left center/56px 1.5px no-repeat,linear-gradient(var(--rose),var(--rose)) right center/56px 1.5px no-repeat}
-.brand-rule::after{content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;background:var(--rose);transform:translate(-50%,-50%) rotate(45deg)}
-.tagline{font-size:10px;letter-spacing:.12em;color:var(--muted)}
-.header-inner>nav{display:flex;flex-wrap:wrap;gap:2px 22px}
-.header-inner>nav a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
-.header-inner>nav a:hover{color:var(--rose)}
-.header-inner>nav a[aria-current="page"]{color:var(--rose);border-color:var(--crimson);font-weight:700}
-
-main{max-width:880px;margin:auto;padding:0 28px 72px}
-
-/* Hero with the contact card */
-.hero{text-align:center;padding:56px 0 8px}
-.eyebrow{font-family:"ENISHI Serif",Georgia,serif;font-size:15px;letter-spacing:.42em;color:var(--rose);margin:0 0 6px}
-.hero h1{font-size:clamp(34px,5vw,46px);color:var(--crimson);letter-spacing:.12em}
-.lead{color:var(--muted);font-size:16px;margin:14px 0 34px}
+/* Support page only: contact card, topic chips and answer cards. Shared design is in style.css. */
+.support-page main{max-width:880px}
+.support-page .hero{display:block;text-align:center;padding:56px 0 8px}
+.support-page .hero h1{font-size:clamp(34px,5vw,46px);color:var(--crimson);letter-spacing:.12em}
+.support-page .lead{color:var(--muted);font-size:16px;margin:14px 0 34px}
 .contact-card{
   text-align:left;background:var(--card);border-radius:var(--radius);padding:34px 40px 30px;
   border:1px solid var(--line);box-shadow:0 18px 50px #b0486614,0 2px 6px #b048660a;
@@ -85,7 +26,7 @@ main{max-width:880px;margin:auto;padding:0 28px 72px}
   background:#ffffffcc;border:1px solid var(--line);color:var(--ink);font-size:14px;text-decoration:none;transition:border-color .15s,background .15s;
 }
 .topics a:hover{border-color:var(--crimson);background:#fff;color:var(--rose-deep)}
-.num{font-family:"ENISHI Serif",Georgia,serif;font-variant-numeric:lining-nums;font-size:15px;letter-spacing:.05em;color:#fff;background:var(--crimson);
+.num{font-family:var(--serif);font-variant-numeric:lining-nums;font-size:15px;letter-spacing:.05em;color:#fff;background:var(--crimson);
   border-radius:999px;min-width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center}
 
 /* Answers */
@@ -102,21 +43,8 @@ main{max-width:880px;margin:auto;padding:0 28px 72px}
   background:linear-gradient(135deg,#ffffffd9,#fff5f8d9);border:1px dashed #e7b3c2}
 .still-need p{margin:0 0 16px;color:var(--muted)}
 
-/* Footer */
-.site-footer{background:#ffffff80;border-top:1px solid var(--line)}
-.footer-inner{max-width:1080px;margin:auto;display:flex;justify-content:space-between;gap:24px;padding:32px 32px 36px}
-.footer-brand{font-size:24px;color:var(--rose);text-decoration:none}
-.footer-inner p{font-size:11px;color:var(--muted);line-height:1.9}
-.footer-inner>div:last-child{text-align:right}
-
 @media(max-width:680px){
-  .header-inner{display:block;padding:18px 20px 8px;text-align:center}
-  .brand{margin:auto}
-  .wordmark{font-size:30px}
-  .header-inner>nav{justify-content:center;gap:0 16px;margin-top:8px}
-  .header-inner>nav a{font-size:11px;min-height:40px}
-  main{padding:0 18px 48px}
-  .hero{padding-top:36px}
+  .support-page .hero{padding-top:36px}
   .contact-card{padding:26px 22px 24px;border-radius:24px}
   .mail-button{width:100%;justify-content:center;padding:12px 18px}
   .topics{justify-content:flex-start;margin:34px 0 22px}
@@ -125,7 +53,5 @@ main{max-width:880px;margin:auto;padding:0 28px 72px}
   .answer .num{width:38px;height:38px;font-size:15px}
   .answer h2{font-size:17px}
   .answer p{font-size:14px}
-  .footer-inner{display:block;padding:26px 20px;text-align:center}
-  .footer-inner>div:last-child{text-align:center}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mail-button{transition:none}}
